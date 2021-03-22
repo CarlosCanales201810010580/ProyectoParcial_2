@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    height: 50px;
+    background:midnightblue;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+#btn-menu {
+    display: none;
+}
+header label {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+.menu ul {
+    background: midnightblue;
+    display: flex;
+    list-style: none;
+}
+.menu ul ul {
+    display: none;
+}
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color:white;
+    text-decoration: none;
+}
+.menu a:hover {
+    color: black;
+    background-color: rgba(225, 225, 247, 0.597);
+}
+.menu a  span {
+    margin-left: 10px
+}
+.menu ul li:hover ul {
+    display: block;
+    position: absolute;
+}
+@media (max-width:768px){
+    header label {
+        display: block;
+    }
+    .menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+    }
+    .menu ul {
+        display: block;
+    }
+    .menu ul li:hover ul {
+        display: none;
+        position: static;
+        
+    
+    }
+    .menu a span {
+        position: absolute;
+       
+     
+    }
+    #btn-menu:checked ~ .menu {
+        transform: translateX(0%);
+        background-color: white;
+        
+    }
+    .menu ul ul a {
+        padding: 15px 40px;
+    }
+    }
+    .charles{
+        margin: 50px;
+        transition: transform .5s;
+    }
+    .charles:hover{
+        transform: scale(1.5);
+    }
+ 
+.boton{
+    margin: 80px;
+    padding: 10px;
+    background-color: lightskyblue
+     
+  }
+  .boton:hover{
+      cursor: pointer;
+      background-color: red;
+      border-color: white;
+  }
+  .texto{
+      color: white;
+      text-align: initial;
+  } 

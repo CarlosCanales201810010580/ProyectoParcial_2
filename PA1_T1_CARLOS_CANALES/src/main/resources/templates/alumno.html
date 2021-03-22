@@ -1,0 +1,173 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Crear Alumno</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href ="@{css/bootstrap.css}" rel="stylesheet">
+    <link th:href ="@{css/estilos_Prof.css}" rel="stylesheet">
+         <link th:href ="@{css/main.css}" rel="stylesheet">
+    </head>
+    <body>
+               
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				Instituto A.H.C <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar Usuario -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+					<img src="./assets/img/logo.png" alt="UserIcon">
+					<figcaption class="text-center text-titles">Administrador</figcaption>
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a href="/" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+				<li>
+					<a href="/principal">
+						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> TABLERO
+					</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-case zmdi-hc-fw"></i> ADMINISTRACIÓN  <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href="/a"><i class="zmdi zmdi-book zmdi-hc-fw"></i>REGISTRAR ASIGNATURA</a>
+						</li>
+                                                <li>
+							<a href="/la"></i> • LISTA DE ASIGNATURAS</a>
+						</li>
+					
+						<li>
+							<a href="/au"><i class="zmdi zmdi-font zmdi-hc-fw"></i>REGISTRAR AULA</a>
+						</li>
+                                                <li>
+							<a href="/lau"></i> • LISTA DE AULAS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> REGISTRAR <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href="/admin"><i class="zmdi zmdi-account zmdi-hc-fw"></i>REGISTRAR ADMINISTRADOR</a>
+						</li>
+						<li>
+							<a href="/p"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> REGISTRAR PROFESOR</a>
+						</li>
+                       
+						<li>
+							<a href="/crear"><i class="zmdi zmdi-face zmdi-hc-fw"></i> REGISTRAR ESTUDIANTE</a>
+						</li>
+                                             
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- Content page-->
+	<section class="full-box dashboard-contentPage">
+		<!-- NavBar -->
+		<nav class="full-box dashboard-Navbar">
+			<ul class="full-box list-unstyled text-right">
+				<li class="pull-left">
+					<a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+				</li>
+				<li>
+                                    <a href="#!" class="btn-Notifications-area" style="text-align: end">
+						<i class="zmdi zmdi-notifications-none"></i>
+						<span class="badge">0</span>
+					</a>
+				</li>
+	
+		
+			</ul>
+		</nav>	
+                <div class="container">
+            <h2 style="text-align: center">Agregar Alumno</h2>
+            <form action="#" th:action="@{/guardar}" th:object="${alumno}" method="post">
+                <input type="hidden" th:field="*{id}" name="id" id="id">
+                <div class="form-group">
+                    <label for="rtn">Rtn</label>
+                    <input type="text" id="rtn" th:field="*{rtn}" name="rtn" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" name="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" id="apellido" th:field="*{apellido}" name="apellido" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" id="direccion" th:field="*{direccion}" name="direccion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" id="telefono" th:field="*{telefono}" name="telefono" class="form-control">
+                </div>
+               
+                
+          <form style="text-align: center">
+              
+          <button class="boton"   type="submit" onclick="boton()">Guardar></button>
+          </form>
+           <script>
+            function boton(){
+                alert("Guardado exitosamente en la lista de estudiantes");
+            }        
+           </script>
+      </div>
+	</section>
+ 
+	<!-- Notifications area -->
+        <section class="full-box Notifications-area" >
+		<div class="full-box Notifications-bg btn-Notifications-area"></div>
+		<div class="full-box Notifications-body">
+			<div class="Notifications-body-title text-titles text-center">
+				Notificaciones <i class="zmdi zmdi-close btn-Notifications-area"></i>
+			</div>
+			<div class="list-group">
+			  	<div class="list-group-item">
+				    <div class="row-action-primary">
+				      	<i class="zmdi zmdi-alert-triangle"></i>
+				    </div>
+				    <div class="row-content">
+				      	<div class="least-content">0 min</div>
+				      	<h4 class="list-group-item-heading">Sin notificaciones</h4>
+				      	<p class="list-group-item-text">Actualmente no tienes ninguna notificación.</p>
+				    </div>
+			  	</div>
+	</section>
+
+
+
+	<!--====== Scripts -->
+	<script src="./js/jquery-3.1.1.min.js"></script>
+	<script src="./js/sweetalert2.min.js"></script>
+	<script src="./js/bootstrap.min2.js"></script>
+	<script src="./js/material.min.js"></script>
+	<script src="./js/ripples.min.js"></script>
+	<script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="./js/main.js"></script>
+	<script>
+		$.material.init();
+	</script>
+    </body>
+</html>
